@@ -1,1 +1,2 @@
-
+username : Admin
+password : zabbix
