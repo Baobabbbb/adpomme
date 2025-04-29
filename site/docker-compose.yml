@@ -1,0 +1,46 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8090:80"
+    volumes:
+      - ./html:/var/www/html  # Utilisation d'un sous-dossier dédié
+    networks:
+      - app-network
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+
+  db:
+    image: mysql:8.0
+    container_name: mysql-db  # Nom explicite pour le conteneur
+    volumes:
+      - db_data:/var/lib/mysql  # Volume persistant pour les données
+      - ./mysql-config:/etc/mysql/conf.d  # Configuration personnalisée
+      - ./docker-entrypoint-initdb.d:/image_gallery.sql  # Scripts d'initialisation de la base de données
+    networks:
+      - app-network
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: image_gallery
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_INITDB_SKIP_TZINFO: 1  # Évite un warning commun
+    healthcheck:  # Vérification automatique de l'état
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./mysql-data  # Stockage local explicite
+
+networks:
+  app-network:
+    driver: bridge

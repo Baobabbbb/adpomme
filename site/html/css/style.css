@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    height: 100vh; /* Hauteur de la fenêtre */
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+header {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.login-icon {
+    position: absolute;
+    background-color: transparent;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+}
+
+.login-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: transparent;
+}
+
+.logout-button {
+    background-color: #c6e48e;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    position: absolute; /* Positionnement absolu */
+    top: 25px; /* Ajustement de la distance par rapport au bord supérieur */
+    right: 30px; /* Ajustement de la distance par rapport au bord droit */
+}
+
+.logout-button:hover {
+    background-color: #b5d67d;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    position: relative;
+    min-height: 400px;
+}
+
+/* Style pour le logo principal cliquable */
+.main-logo {
+    display: flex; /* Utiliser flexbox ici pour centrer */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 8%;
+}
+
+/* Lien entourant le logo */
+.main-logo a {
+    text-decoration: none; /* Supprime le soulignement */
+    margin: 0; /* Supprime les marges éventuelles */
+    padding: 0; /* Supprime les espacements internes */
+    display: inline-block; /* Limite la zone cliquable à la taille du contenu (logo) */
+}
+
+/* Image du logo */
+.main-logo img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* Ajustement de la marge de la galerie */
+.image-gallery {
+    margin-top: 20px; /* Réduit la marge initiale */
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.image-item {
+    text-align: center;
+}
+
+.image-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.image-item span {
+    display: block;
+    font-weight: bold;
+}
+
+.modify-button {
+    position: fixed;
+    bottom: 75px;
+    right: 80px;
+    background-color: #c6e48e;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.modify-button:hover {
+    background-color: #b5d67d;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #c6e48e;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.error {
+    background-color: #ffdddd;
+    color: #f44336;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.success {
+    background-color: #ddffdd;
+    color: #4CAF50;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Modify Page */
+.modify-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.image-edit-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.image-edit-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.image-edit-item form {
+    flex: 1;
+}
+
+.back-button-haut {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ddd;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.back-button-bas {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ddd;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 60px;
+}
+
+/* MODIFY PAGE ENHANCEMENTS */
+.add-new-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.add-new-section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.order-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.order-controls button {
+    padding: 8px 12px;
+    background: #c6e48e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.order-controls button:hover {
+    background: #a8d16e;
+    transform: translateY(-2px);
+}
+
+.order-controls button[value="delete"] {
+    background: #ffd7de;
+}
+
+.order-controls button[value="delete"]:hover {
+    background: #ffb3c1;
+}
+
+.image-edit-item form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.image-edit-item .form-group {
+    margin-bottom: 0;
+}

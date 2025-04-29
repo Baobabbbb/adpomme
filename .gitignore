@@ -1,0 +1,13 @@
+# Ignorer les fichiers et dossiers MySQL temporaires
+site/mysql-data/
+site/mysql-config/
+site/docker-entrypoint-initdb.d/
+
+# Ignorer les fichiers systèmes
+*.sock
+*.pid
+*.log
+
+# Ignorer les fichiers docker ou runtime
+*.env
+.env.*
