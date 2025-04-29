@@ -1,13 +1,41 @@
-# Ignorer les fichiers et dossiers MySQL temporaires
-site/mysql-data/
-site/mysql-config/
-site/docker-entrypoint-initdb.d/
+# Node & npm (si jamais tu ajoutes du frontend)
+node_modules/
+npm-debug.log*
 
-# Ignorer les fichiers systèmes
+# Docker
+docker-compose.override.yml
+docker-compose*.yml.bak
+**/mysql-data/
+**/mysql-config/
+**/docker-entrypoint-initdb.d/
 *.sock
+
+# PHP
+vendor/
+composer.lock
+
+# MySQL fichiers de base de données
 *.pid
 *.log
+*.sql
+*.sqlite
+*.db
 
-# Ignorer les fichiers docker ou runtime
-*.env
-.env.*
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Fichiers systèmes Windows / Mac
+Thumbs.db
+.DS_Store
+ehthumbs.db
+Desktop.ini
+
+# Fins de lignes gérées
+*.sh text eol=lf
+*.php text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.env text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
